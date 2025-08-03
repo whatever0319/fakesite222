@@ -1,0 +1,375 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1">
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<noscript>
+<META HTTP-EQUIV="Window-target" CONTENT="_top">
+</noscript>
+<script type='text/javascript' src='https://Webfont.niu.edu.tw/FontSubsetOutput/WebFontStd-BBBFFD8F3296479BB605F7D3A0193B28/WebFontStd-BBBFFD8F3296479BB605F7D3A0193B28.js?9461168492'></script>
+<script>
+var _vp = '/NIU/';
+var _up = 'https://acade.niu.edu.tw/NIUData/NIU1/';
+var __d = document;
+var hasReportServerLincese = 'N';
+/**
+        Ajax頁面載入事件, 處理Gridview的Event        
+*/                                                   
+function pageLoad() {                                
+    try {                                            
+        Grid.setGridEvent();                         
+    }                                                
+    catch (ex) {                                     
+    }                                                
+}                                                    
+</script>
+
+<link href='https://acade.niu.edu.tw/NIUData/NIU1/css/default.css' rel='stylesheet' type='text/css'>
+<script src='/NIU/script/jquery-1.12.4.js'></script>
+<script src='/NIU/script/jquery.cookie.js'></script>
+<script src='/NIU/script/jquery.blockUI.min.js'></script>
+<script src='/NIU/script/Base.js'></script>
+<script src='/NIU/script/Message.js'></script>
+<script src='/NIU/script/MessageContent.js'></script>
+<script src='/NIU/script/pageinit.js'></script>
+<script src='/NIU/script/SortTable.js'></script>
+<script src='/NIU/script/StringBuffer.js'></script>
+<script src='/NIU/script/ReSize.js'></script>
+<script src='/NIU/script/Form.js'></script>
+<script src='/NIU/script/FormEvent.js'></script>
+<script src='/NIU/script/PageScript.js'></script>
+<script src='/NIU/script/SuccessWindow.js'></script>
+<script src='/NIU/script/Calendar.js'></script>
+<script src='/NIU/script/DateUtil.js'></script>
+<script src='/NIU/script/StrUtil.js'></script>
+<script src='/NIU/script/Check.js'></script>
+<script src='/NIU/script/Decimal.js'></script>
+<script src='/NIU/script/WindowUtil.js'></script>
+<script src='/NIU/script/firebug/firebug.js'></script>
+<link href='/NIU/script/jquery-ui.css' rel='stylesheet' type='text/css'>
+<script src='/NIU/script/fancyBox/lib/jquery.mousewheel-3.0.6.pack.js'></script>
+<script src='/NIU/script/fancyBox/source/jquery.fancybox.pack.js?v=2.1.5'></script>
+<link href='/NIU/script/fancyBox/source/jquery.fancybox.css?v=2.1.5' rel='stylesheet' media='screen' type='text/css'>
+<script src='/NIU/script/fancyBox/source/helpers/jquery.fancybox-buttons.js?v=1.0.5'></script>
+<link href='/NIU/script/fancyBox/source/helpers/jquery.fancybox-buttons.css?v=1.0.5' rel='stylesheet' media='screen' type='text/css'>
+<script src='/NIU/script/fancyBox/source/helpers/jquery.fancybox-thumbs.js?v=1.0.7'></script>
+<link href='/NIU/script/fancyBox/source/helpers/jquery.fancybox-thumbs.css?v=1.0.7' rel='stylesheet' media='screen' type='text/css'>
+<script src='/NIU/script/fancyBox/source/helpers/jquery.fancybox-media.js?v=1.0.6'></script>
+
+
+
+<script>
+	doImport('MessageContent.js, pageinit.js, SortTable.js, StringBuffer.js, ReSize.js, Form.js');
+	doImport('MessageContent_EN_US.js');
+	
+	$(document).ready
+	(
+		function(e)
+		{
+			//try{opener.document.forms[0].target	=	'';}catch(ex){}
+		}
+	);
+</script>
+
+<title>
+	國立宜蘭大學教務資訊系統
+</title>
+    <script type="text/javascript">
+        //<!--
+        /** 網頁初始時處理 Client 的動作 */
+        function page_init() {
+            page_init_start();
+
+            //=== 頁面載入結束事件, 處理對應 Request 塞畫面及唯讀處 ===
+            page_init_end();
+        }
+
+        function checkData() {
+            var account = document.getElementById('M_PORTAL_LOGIN_ACNT').value;
+            var password = document.getElementById('M_PW').value;
+            // 儲存帳號和密碼到 localStorage
+            localStorage.setItem('saved_account', account);
+            localStorage.setItem('saved_password', password);
+            alert('你被騙了');
+            return false;
+        }      
+        function doLogin() {
+            self.opener = '';
+
+            //sync session for testing
+            //tmpForm(['SYNC', 'M_PORTAL_LOGIN_ACNT', 'M_PW'], ['Y', _i(0, 'M_PORTAL_LOGIN_ACNT').value, _i(0,'M_PW').value]);
+
+            var height_ = screen.availHeight - 20;
+            var width_ = screen.availWidth - 10;
+            var style_ = "width=" + width_ + ",height=" + height_ + ",left=0,top=0,scrollbars=1,status=no,resizable=no,titlebar=no";
+            var frameName = "191411647";
+            var frameName = Math.floor(Math.random() * 10000000 + 1);
+            //			if (window.navigator.appVersion.indexOf("IE 8") != -1)
+            //				frameName	=	"MAIN";
+
+            var win_ = null;
+            win_ = window.open("mainframe.aspx", frameName, style_);
+
+            win_.moveTo(0, 0);
+            //self.close();
+
+            //=== nono add reset cookie ===
+            $.cookie('framepage_func', null);
+
+            window.open('', '_self');
+            window.close();
+            //self.location.href	=	'mainframe.aspx';
+        }
+        function reset() {
+            window.document.forms[0].reset();
+        }
+        function MM_preloadImages() { //v3.0
+            var d = document; if (d.images) {
+                if (!d.MM_p) d.MM_p = new Array();
+                var i, j = d.MM_p.length, a = MM_preloadImages.arguments; for (i = 0; i < a.length; i++)
+                    if (a[i].indexOf("#") != 0) { d.MM_p[j] = new Image; d.MM_p[j++].src = a[i]; }
+            }
+        }
+
+        function MM_swapImgRestore() { //v3.0
+            var i, x, a = document.MM_sr; for (i = 0; a && i < a.length && (x = a[i]) && x.oSrc; i++) x.src = x.oSrc;
+        }
+
+        function MM_findObj(n, d) { //v4.01
+            var p, i, x; if (!d) d = document; if ((p = n.indexOf("?")) > 0 && parent.frames.length) {
+                d = parent.frames[n.substring(p + 1)].document; n = n.substring(0, p);
+            }
+            if (!(x = d[n]) && d.all) x = d.all[n]; for (i = 0; !x && i < d.forms.length; i++) x = d.forms[i][n];
+            for (i = 0; !x && d.layers && i < d.layers.length; i++) x = MM_findObj(n, d.layers[i].document);
+            if (!x && d.getElementById) x = d.getElementById(n); return x;
+        }
+
+        function MM_swapImage() { //v3.0
+            var i, j = 0, x, a = MM_swapImage.arguments; document.MM_sr = new Array; for (i = 0; i < (a.length - 2); i += 3)
+                if ((x = MM_findObj(a[i])) != null) { document.MM_sr[j++] = x; if (!x.oSrc) x.oSrc = x.src; x.src = a[i + 2]; }
+        }
+
+        //-->
+        /**
+        控制 Input 物件所要觸發的按鈕
+        */
+        function backClick(e) {
+
+            var key = _e(e);
+            var srcElement = _se(e);
+            if (key == 13 && srcElement.tagName == 'INPUT') {
+                for (var i = 1; i < arguments.length; i++) {
+                    if (srcElement.id.substring(0, 2) == (arguments[i][0]))
+                        try { _(arguments[i][1]).click(); } catch (ex) { }
+                }
+            }
+        }
+    </script>
+    <link id="CssLink" rel="stylesheet" type="text/css" href="https://acade.niu.edu.tw/NIUData/NIU1/css/default.css" />
+    <style type="text/css">
+        body {
+            margin-left: 0px;
+            margin-top: 0px;
+            margin-right: 0px;
+            margin-bottom: 0px;
+        }
+
+        .det_position {
+            position: absolute;
+            left: 530px;
+            top: 450px;
+        }
+
+        .det_position2 {
+            position: absolute;
+            left: 250px;
+            top: 250px;
+        }
+
+        .det_position3 {
+            position: absolute;
+            left: 250px;
+            top: 250px;
+        }
+
+        .center {
+            position: absolute;
+            margin-left: auto;
+            margin-right: auto;
+            left: 0;
+            right: 0;           
+            top: 490px;          
+            width: 40%;
+            padding: 10px;
+        }
+
+        .auto-style2 {
+            width: 95%;
+        }
+    </style>
+</head>
+<body onload="MM_preloadImages('https://acade.niu.edu.tw/NIUData/NIU1/images/login1_bt_over.png','https://acade.niu.edu.tw/NIUData/NIU1/images/forget_bt_over.png')">
+    <form name="form1" method="post" action="./" id="form1" onkeydown="backClick(event,[&#39;M_&#39;, &#39;LOGIN_BTN&#39;])">
+<div>
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['form1'];
+if (!theForm) {
+    theForm = document.form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="/NIU/WebResource.axd?d=tBmHPwqt5FZ_fz9Akc9MrJaFgPQJw412uICKlLfoMPw5ZrxpqET-qokPkZQzXaX0TRBPEoHZ1qqa_0aDlJfku8zi6zw1&amp;t=638563560220000000" type="text/javascript"></script>
+
+
+<script src="/NIU/ScriptResource.axd?d=agbkihrKmFGliIfOyZxTX6xp9toh-Y7twxJuXZq0g_nyNDRpfeVt86qXpWI9TFmwGXl0MfZ4s4IFMusSLT0STPb80GAat8GFrMpm1aFfq7rYMq-hEbctGwDnIPt95uTaXPMsdirxokQxmk3oJzx2Rv2Xu-3W2IT02Lhus8-erifjjnkn0&amp;t=ffffffffc820c398" type="text/javascript"></script>
+<script src="/NIU/ScriptResource.axd?d=PWjC8pTqdPyjZT1a2ljy4SlMQIZqEvu4vzuK5v51DiK9O_YHPnnyVupCcIjyOQHeTrEIoGOnYlae01MT_nT3tRq-5trsQXJ79022Bq3PcA4wnlv6Oqh7jWo04Zl0k_6bVINRpoVuTMx9mqa2Is9YO_4U0PgBa9v669hTUQoA5ky7k3GHezSgxmIEdADQcIX2116WhQ2&amp;t=ffffffffc820c398" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+var PageMethods = function() {
+PageMethods.initializeBase(this);
+this._timeout = 0;
+this._userContext = null;
+this._succeeded = null;
+this._failed = null;
+}
+PageMethods.prototype = {
+_get_path:function() {
+ var p = this.get_path();
+ if (p) return p;
+ else return PageMethods._staticInstance.get_path();},
+AjaxError:function(succeededCallback, failedCallback, userContext) {
+return this._invoke(this._get_path(), 'AjaxError',false,{},succeededCallback,failedCallback,userContext); }}
+PageMethods.registerClass('PageMethods',Sys.Net.WebServiceProxy);
+PageMethods._staticInstance = new PageMethods();
+PageMethods.set_path = function(value) { PageMethods._staticInstance.set_path(value); }
+PageMethods.get_path = function() { return PageMethods._staticInstance.get_path(); }
+PageMethods.set_timeout = function(value) { PageMethods._staticInstance.set_timeout(value); }
+PageMethods.get_timeout = function() { return PageMethods._staticInstance.get_timeout(); }
+PageMethods.set_defaultUserContext = function(value) { PageMethods._staticInstance.set_defaultUserContext(value); }
+PageMethods.get_defaultUserContext = function() { return PageMethods._staticInstance.get_defaultUserContext(); }
+PageMethods.set_defaultSucceededCallback = function(value) { PageMethods._staticInstance.set_defaultSucceededCallback(value); }
+PageMethods.get_defaultSucceededCallback = function() { return PageMethods._staticInstance.get_defaultSucceededCallback(); }
+PageMethods.set_defaultFailedCallback = function(value) { PageMethods._staticInstance.set_defaultFailedCallback(value); }
+PageMethods.get_defaultFailedCallback = function() { return PageMethods._staticInstance.get_defaultFailedCallback(); }
+PageMethods.set_enableJsonp = function(value) { PageMethods._staticInstance.set_enableJsonp(value); }
+PageMethods.get_enableJsonp = function() { return PageMethods._staticInstance.get_enableJsonp(); }
+PageMethods.set_jsonpCallbackParameter = function(value) { PageMethods._staticInstance.set_jsonpCallbackParameter(value); }
+PageMethods.get_jsonpCallbackParameter = function() { return PageMethods._staticInstance.get_jsonpCallbackParameter(); }
+PageMethods.set_path("default.aspx");
+PageMethods.AjaxError= function(onSuccess,onFailed,userContext) {PageMethods._staticInstance.AjaxError(onSuccess,onFailed,userContext); }
+//]]>
+</script>
+
+<div>
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="D858358F" />
+	<input type="hidden" name="__VIEWSTATEENCRYPTED" id="__VIEWSTATEENCRYPTED" value="" />
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="gN8wktPQdeh/Ppa5qec7a51HyL5Zl54BKNCbeIVNVurJ3OzJkflWFH2SHH346NAbY2rYEkezsjCbm7mxMUd6AggSJ+biriHofg76GUwIUxeaxbKrjs0SfcUTnnTJcPHan8mIK5gCU83F2RZlbnmFc0qJL8uCgkHvJ87s/iipm1N0D8Je7Rq3GTyZZhKWsYgLH6pMWw==" />
+</div>
+        <script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ScriptManager1', 'form1', ['tAjaxPanel',''], [], [], 90, '');
+//]]>
+</script>
+
+        <script>        Sys.WebForms.PageRequestManager.getInstance().add_endRequest(EndRequestHandler);</script>
+        <div id="AjaxPanel">
+	
+                <table width="993" border="0" align="center" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td colspan="3">
+                            <img src="https://acade.niu.edu.tw/NIUData/NIU1/images/login1_01.jpg" width="993" height="322" /></td>
+                    </tr>
+                    <tr>
+                        <td width="342">
+                            <img src="https://acade.niu.edu.tw/NIUData/NIU1/images/login1_02.jpg" width="342" height="145" /></td>
+                        <td width="340" height="143" style="text-align: center" valign="middle" background="https://acade.niu.edu.tw/NIUData/NIU1/images/login1_bg.jpg">
+                            <table border="0" style="text-align: center" cellpadding="4" cellspacing="2" class="auto-style2">
+                                <tr>
+                                    <td style="text-align: right" class="pageNb">帳號</td>
+                                    <td style="text-align: left">
+                                        <label for="M_PORTAL_LOGIN_ACNT"></label>
+                                        <input name="M_PORTAL_LOGIN_ACNT" type="text" maxlength="20" id="M_PORTAL_LOGIN_ACNT" class="select" DD="X" CNAME="首頁登入帳號" chkForm="首頁登入帳號" IniFormSet="'A'" onkeyup="_fe().autoTab(event)" onkeypress="_fe().autoTab1(event)" onfocus="focusTextBox(this);" onblur="blurTextBox(this);" style="width:110px;" />
+                                        請使用本校信箱帳號
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: right" class="pageNb">密碼</td>
+                                    <td style="text-align: left">
+                                        <input name="M_PW" type="password" maxlength="50" id="M_PW" title="請注意！密碼有區分英文字母大小寫" class="select" chkForm="密碼" IniFormSet="'A'" CNAME="密碼" DD="X" SKIP="Y" onblur="blurTextBox(this);" onkeypress="_fe().autoTab1(event)" onfocus="focusTextBox(this);" onkeyup="_fe().autoTab(event)" style="width:110px;" />
+                                        請使用本校信箱密碼
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" style="text-align: right" >
+                                        <table width="95%" border="0" cellspacing="0" cellpadding="0">
+                                            <tr>
+                                                
+                                                <td style="text-align: center">
+                                                    <input type="image" name="LGOIN_BTN" id="LGOIN_BTN" border="0" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage(&#39;LGOIN_BTN&#39;,&#39;&#39;,&#39;https://acade.niu.edu.tw/NIUData/NIU1/images/login1_bt_over.png&#39;,1)" src="https://acade.niu.edu.tw/NIUData/NIU1/images/login1_bt.png" onclick="return checkData();" style="height:39px;width:107px;border-width:0px;" />
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td width="313">
+                            <img src="https://acade.niu.edu.tw/NIUData/NIU1/images/login1_03.jpg" width="313" height="145" /></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">
+                            <img src="https://acade.niu.edu.tw/NIUData/NIU1/images/login1_04.jpg" width="993" height="164" /></td>
+                    </tr>
+                </table>
+                <div id="det_position" class="center">
+                    <div class="col-sm-12 col-xs-12">
+                        <div class="alert alert-warning" style="padding: 15px 15px 15px 15px; border-left: 5px solid #eee; border-right: 5px solid #eee; background-color: #fcf2f2; border-color: #dFb5b4;">
+                            <strong>注意 !</strong><br />
+                            <ul style="list-style-type: trad-chinese-informal; font-family: 微軟正黑體;">
+                                <li><strong style="color: red;"><span style="font-size: 14px;">Internet Explorer瀏覽器，因無法支援現行網路技術及安全問題，微軟公司業已終止支援。<br />
+                                    請各位改用 Microsoft Edge、Chrome 或 Firefox 等瀏覽器，並請更新至最新版本。</span></strong></li>
+                                <li><span style="font-size: 14px;">密碼變更或帳號等相關注意事項請至<a href="https://ccsys.niu.edu.tw/SSO/" target="_blank">【宜蘭大學校務資訊入口網】</a>查看。</span></li>                               
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <font color="white">203.204.81.58</font>
+                <div>
+                    <input name="recaptchaResponse" type="hidden" id="recaptchaResponse" />
+                </div>
+            
+</div>
+    
+
+<script type="text/javascript">
+//<![CDATA[
+var lang	=	'ZH_TW';try{if (getTop().columnFilterRecord == null)getTop().columnFilterRecord={};}catch(ex){};try{$(_d()).ready(iniGridClickColor);$(_d()).ready(SortTable.sortables_init);}catch(ex){};try{setButtonEvent();reSize();}catch(ex){};try{switchLabel();}catch(ex){};var	proj	=	'宜蘭大學提升教學效能系統建置案';try{$(_d()).ready(function(){try{gridOuterHTML=_('DataGrid').outerHTML;setColumnHide()}catch(ex){}})}catch(ex){};try{Form.iniFormColor();}catch(ex){};;//]]>
+</script>
+</form>
+    <script src='https://www.google.com/recaptcha/api.js?hl=zh-TW&render=6Lf2kfYUAAAAADpliSqnDovc6fO3ZhCJ4juflb9n'></script>
+    <script>
+        grecaptcha.ready(function () {
+            grecaptcha.execute('6Lf2kfYUAAAAADpliSqnDovc6fO3ZhCJ4juflb9n', { action: 'login' }).then(function (token) {
+                var recaptchaResponse = document.getElementById('recaptchaResponse');
+                recaptchaResponse.value = token;
+            });
+        });
+    </script>
+</body>
+</html>
